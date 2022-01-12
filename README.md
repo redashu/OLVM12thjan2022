@@ -155,3 +155,116 @@ libvirtd.conf       qemu-lockd.conf  virtinterfaced.conf  virtnetworkd.conf  vir
 [root@ol8host1 libvirt]# 
 
 ```
+
+### ON OL8 installing and configuring Cockpit 
+
+```
+  38  dnf  install cockpit  cockpit-machines 
+   39  systemctl  start  cockpit 
+   40  systemctl  enable  cockpit 
+   41  systemctl  status  cockpit 
+   42  history 
+[root@ol8host1 libvirt]# netstat -ntpl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:9003          0.0.0.0:*               LISTEN      2408/osms-agent     
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 192.168.122.1:53        0.0.0.0:*               LISTEN      44330/dnsmasq       
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      8373/sshd           
+tcp6       0      0 127.0.0.1:32768         :::*                    LISTEN      2408/osms-agent     
+tcp6       0      0 :::9090                 :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      8373/sshd           
+[root@ol8host1 libvirt]# firewall-cmd --add-port=9090/tcp --permanent 
+success
+[root@ol8host1 libvirt]# firewall-cmd --reload 
+success
+[root@ol8host1 libvirt]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2022-01-12 05:20:51 GMT; 55min ago
+     Docs: man:firewalld(1)
+
+
+```
+
+### Image Download location for testing purpose 
+
+[Ubuntu images](https://ftp.riken.jp/Linux/ubuntu-releases/focal/)
+
+[Centos Images] (https://ftp.riken.jp/Linux/centos/7/isos/x86_64/)
+
+### Creating VM in OL8 Host 
+
+<img src="olhost.png">
+
+## creating vm with virt-install 
+
+### Installing virt-install
+
+```
+ dnf install virt-install 
+Last metadata expiration check: 0:59:07 ago on Wed 12 Jan 2022 05:43:13 AM GMT.
+Dependencies resolved.
+=========================================================================================================================
+ Package                      Architecture    Version                                       Repository              Size
+=========================================================================================================================
+Installing:
+ virt-install                 noarch          2.2.1-4.0.1.el8                               ol8_appstream          100 k
+Installing dependencies:
+ genisoimage                  x86_64          1.1.11-39.el8                                 ol8_appstream          316 k
+ libosinfo                    x86_64          1.9.0-1.el8                                   ol8_appstream          300 k
+ libusal                      x86_64          1.1.11-39.el8                                 ol8_appstream          145 k
+ osinfo-db                    noarch          20210903-1.0.1.el8                            ol8_appstream          252 k
+ osinfo-db-tools              x86_64          1.9.0-1.el8                                   ol8_appstream           67 k
+ python3-argcomplete          noarch      
+ 
+ ```
+ 
+ ### creating a vm using virt-install 
+ 
+ ```
+ virt-install --name  myubuntu  --vcpus 1 --memory 4096 --cdrom /mnt/imags/ubuntu-20.04.3-desktop-amd64.iso  --disk size=10
+ 
+ ```
+ 
+ ### VM as a file for Host 
+ 
+ ```
+  cd /var/lib/libvirt/
+[root@ol8host1 libvirt]# ls
+boot  dnsmasq  filesystems  images  network  qemu  swtpm
+[root@ol8host1 libvirt]# cd  images/
+[root@ol8host1 images]# ls
+CentOS-7-x86_64-Minimal-2009.iso  myubuntu.qcow2
+[root@ol8host1 images]# ls  -lh 
+total 994M
+-rw-r--r--. 1 root root 973M Nov  3  2020 CentOS-7-x86_64-Minimal-2009.iso
+-rw-------. 1 qemu qemu  11G Jan 12 06:50 myubuntu.qcow2
+[root@ol8host1 images]# 
+[root@ol8host1 images]# 
+[root@ol8host1 images]# grep -i qemu  /etc/passwd
+qemu:x:107:107:qemu user:/:/sbin/nologin
+[root@ol8host1 images]# 
+
+
+```
+
+### vm has XMl conf file to store details like its RAM / CPU / network / storage 
+
+```
+ cd qemu/
+[root@ol8host1 qemu]# ls
+myubuntu.xml  networks
+[root@ol8host1 qemu]# pwd
+/etc/libvirt/qemu
+[root@ol8host1 qemu]# vim myubuntu.xml 
+
+```
+
+### summary 
+
+<img src="sum.png">
+
+
+ 
