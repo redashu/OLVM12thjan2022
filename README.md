@@ -266,5 +266,36 @@ myubuntu.xml  networks
 
 <img src="sum.png">
 
+## Image and storage server introduction 
+
+<img src="sts.png">
+
+## FInal infra 
+
+<img src="infra.png">
+
+### setting up ISO domain server with http 
+
+```
+  1  dnf  install http -y
+    2  cat  /etc/os-release 
+    3  yum install  httpd -y
+    4  history 
+    5  cd  /var/www/html/
+    6  ls
+    7  mkdir images
+    8  ls
+    9  cd  images/
+  
+   12  ls
+   13  pwd
+   14  ls
+   15  firewall-cmd --add-service=http --permanent 
+   16  firewall-cmd --reload 
+   17  history 
+   18  systemctl enable --now httpd
+
+```
+
 
  
