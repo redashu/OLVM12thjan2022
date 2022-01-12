@@ -297,5 +297,18 @@ myubuntu.xml  networks
 
 ```
 
+### Mounting NFS storage to Hypervisor Host 
+
+<img src="nfs.png">
+
+### Storage in process 
+
+<img src="storage.png">
+
+### Iscsi understanding 
+
+<img src="iscsi.png">
+
+
 
  
