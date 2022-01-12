@@ -1,1 +1,4 @@
-# OLVM12thjan2022
+# A little understanding about VIrtualization 
+
+<img src="vm1.png">
+
