@@ -94,4 +94,36 @@ Hint: Some lines were ellipsized, use -l to show in full.
 <img src="olvm.png">
 
 
+### In RHVM labs installing Virtualization host 
 
+### Lab 1 checking rhvm host networking checks 
+
+### In workstation student /student 
+
+```
+lab insallation-install-rhvh start 
+```
+
+### checking workstation browser by openning rhvHost cockpit and ping 
+
+### finish that 
+
+```
+lab insallation-install-rhvh start
+
+```
+
+### Install Selfhosted RHVM -- Redhat Virtualization manager 
+
+```
+lab install-rhvm start
+
+```
+
+### Note : in workstation web browser open rhvm port and check things 
+
+### finish 
+
+```
+lab install-rhvm finish 
+```
