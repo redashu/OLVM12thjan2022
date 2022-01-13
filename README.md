@@ -127,3 +127,13 @@ lab install-rhvm start
 ```
 lab install-rhvm finish 
 ```
+
+
+## TO create VM using OLVM/RHVM we need things given below 
+
+<img src="vmneed.png">
+
+### ON utility server check nfs share owner and group permission 
+
+<img src="nfs.png">
+
