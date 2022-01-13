@@ -85,5 +85,13 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 <img src="gfs.png">
 
+### Understanding Redhat Labs 
+
+<img src="rhlabs.png">
+
+### OLVM / RHVM in more detail 
+
+<img src="olvm.png">
+
 
 
