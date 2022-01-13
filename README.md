@@ -137,3 +137,20 @@ lab install-rhvm finish
 
 <img src="nfs.png">
 
+
+### Self Hosted OLVM 
+
+```
+ 10  mkfs.xfs  /dev/sda2 -f
+   11  mount /dev/sda2  /var/tmp/
+   12  df -h 
+   13  yum-config-manager --enable ol7_latest
+   14  yum install oracle-ovirt-release-el7
+   15  yum-config-manager --enable repository
+   16  yum-config-manager --disable ovirt-4.2
+   17  yum-config-manager --disable ovirt-4.2-extra
+   18  yum install ovirt-hosted-engine-setup -y
+   19  yum install ovirt-engine-appliance -y
+
+```
+
