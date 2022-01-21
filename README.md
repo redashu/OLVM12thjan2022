@@ -37,5 +37,34 @@
 
 <img src="spm.png">
 
+## LDAP integration steps to RHVM / OLVM 
+
+### step 1 ssh into  rhvm host 
+
+### step 2 RUN below given command 
+
+<img src="ldapp.png">
+
+### step 3 follow options for above command 
+
+<img src="ladpp2.png">
+
+====
+
+<img src="ldapp3.png">
+
+====
+
+<img src="ldapp4.png">
+
+====
+
+<img src="ldapp5.png">
+
+===
+
+<img src="ldapp6.png">
+
+
 
 
