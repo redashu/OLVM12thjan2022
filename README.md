@@ -47,7 +47,7 @@
 
 ### step 3 follow options for above command 
 
-<img src="ladpp2.png">
+<img src="ldapp2.png">
 
 ====
 
