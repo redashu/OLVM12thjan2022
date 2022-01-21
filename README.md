@@ -33,5 +33,9 @@
 
 <img src="rolet.png">
 
+### Scaling Infra RHV host / KVM host -- required cluster level role + SPM (storage pool manager) role -- for currently loggedin user 
+
+<img src="spm.png">
+
 
 
