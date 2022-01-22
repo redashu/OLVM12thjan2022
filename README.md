@@ -20,3 +20,25 @@
 
 <img src="nfs.png">
 
+### Host maintaince 
+
+<img src="main.png">
+
+## Virtualization Networking 
+
+<img src="net.png">
+
+### To create Logical Networking we have SDN --
+
+<img src="sdn.png">
+
+### linux bridge understanding 
+
+<img src="br1.png">
+
+### TYpe of Logical networks
+
+<img src="typen.png">
+
+
+
