@@ -40,5 +40,19 @@
 
 <img src="typen.png">
 
+### VLAN concept --for network segrigation 
+
+<img src="vlan.png">
+
+### Logical Network configuration 
+
+<img src="logic.png">
+
+### Task for vm +storge 
+
+<img src="vmst1.png">
+
+
+
 
 
